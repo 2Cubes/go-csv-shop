@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->string('sku', 50)->unique();
             $table->string('name', 255)->nullable();
             $table->text('description')->nullable();
-            $table->decimal('price', 10, 2)->nullable();
+            $table->decimal('price', 16, 2)->nullable();
             $table->integer('stock')->nullable();
             $table->unsignedBigInteger('brand_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
