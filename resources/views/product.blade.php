@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $product->name)
+@section('title', $product->name . "- покупайте в компании Промэлектроника")
+@section('description', "Быстрая доставка «название товара» по России и странам СНГ. sales@prom-elec.com – электронная почта для заказа оборудования. Работаем напрямую с производителями оборудования")
 
 @section('content')
 
@@ -12,8 +13,12 @@
                     <div class="small mb-1">Артикул: {{ $product->sku }}</div>
                     <h1 class="display-5 fw-bolder">{{ $product->name }}</h1>
                     <div class="fs-5 mb-5">
-                        <span class="text-decoration-line-through">{{ number_format($product->price * 1.3, 2, '.', ' ') }} руб</span>
-                        <span>{{ number_format($product->price, 2, '.', ' ') }} руб</span>
+                        @if($product->price * 1)
+                            <span class="text-decoration-line-through">{{ number_format($product->price * 1.3, 2, '.', ' ') }} руб</span>
+                            <span>{{ number_format($product->price, 2, '.', ' ') }} руб</span>
+                        @else
+                            <span>Уточняйте цену</span>
+                        @endif
                     </div>
                     <p class="lead">{{ $product->description }}</p>
                     <div class="d-flex">

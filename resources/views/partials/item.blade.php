@@ -16,7 +16,12 @@
                 </a>
             </h6>
             <!-- Product price-->
-            {{ number_format($product->price, 2, '.', ' ') }} руб
+            @if($product->price * 1)
+                {{ number_format($product->price, 2, '.', ' ') }} руб
+            @else
+                Уточняйте цену
+            @endif
+
         </div>
     </div>
     <!-- Product actions-->

@@ -35,9 +35,9 @@
                 <!-- Category Filter -->
                 <div class="mb-3">
                     <label class="form-label">Категории</label>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled" style="font-size: 12px;">
                         @foreach($categories as $category)
-                            <li><a href="{{ route('category', $category->id) }}">{{ $category->name }}</a></li>
+                            <li style="margin-bottom: 5px;"><a href="{{ route('category', $category->id) }}">{{ $category->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>

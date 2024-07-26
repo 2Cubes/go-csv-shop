@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $category->name)
+@section('title', $category->name . " - покупайте в компании Промэлектроника")
+@section('description', "Для заказа «название категории» пришлите запрос на электронную почту sales@prom-elec.com. Быстрая доставка по России и странам СНГ.")
 
 @section('content')
 

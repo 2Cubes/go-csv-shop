@@ -34,9 +34,9 @@ class IndexController extends Controller
         $brands = Cache::remember('brands', 60 * 60, function () {
             return Brand::all();
         });
-        $categories = Cache::remember('categories', 60 * 60, function () {
+        $categories = Category::all();/*Cache::remember('categories', 60 * 60, function () {
             return Category::limit(100)->get();
-        });
+        });*/
 
         return view('index', [
             'products' => $products,
