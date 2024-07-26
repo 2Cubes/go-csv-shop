@@ -35,7 +35,7 @@ class IndexController extends Controller
             return Brand::all();
         });
         $categories = Cache::remember('categories', 60 * 60, function () {
-            return Category::limit(100)->get();
+            return Category::whereHas('products')->limit(100)->get();
         });
 
         return view('index', [
@@ -57,7 +57,7 @@ class IndexController extends Controller
             return Brand::all();
         });
         $categories = Cache::remember('categories', 60 * 60, function () {
-            return Category::limit(100)->get();
+            return Category::whereHas('products')->limit(100)->get();
         });
 
         return view('category', [
