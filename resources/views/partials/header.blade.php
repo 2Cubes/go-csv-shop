@@ -18,7 +18,7 @@
                 <button class="btn prom-btn p-4">Найти</button>
             </form>
             <div class="d-flex justify-content-between align-items-center">
-                <a href="tel:+88888888888" class="ms-3 main-phone"><img src="{{ asset('img/phone.svg') }}" class="ms-4" alt="" /> 8 888 888 88 88</a>
+                <a href="tel:+88888888888" class="ms-3 main-phone"><img src="{{ asset('img/phone.svg') }}" class="ms-4" alt="" /> 8-800-350-57-63</a>
                 <a href="#" class="header-btn ms-4 p-4 btn prom-btn-outline"  data-bs-toggle="modal" data-bs-target="#requestModal">Отправить запрос</a>
                 <a href="#" class="header-btn ms-4 p-4 btn prom-btn"  data-bs-toggle="modal" data-bs-target="#callModal">Заказать звонок</a>
             </div>
