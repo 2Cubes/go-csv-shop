@@ -20,9 +20,9 @@
         </form>
         <div class="bottom-line">
             <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Каталог</a></li>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+                <li><a href="/catalog">Каталог</a></li>
             </ul>
             <span >© 2024 Все права защищены</span>
             <span class="ms-5">Политика конфиденциальности</span>
