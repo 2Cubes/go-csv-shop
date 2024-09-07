@@ -25,4 +25,21 @@ class RequestController extends Controller
 
         return redirect('/')->with('success', 'Спасибо! Мы ответим в ближайшее время!');
     }
+
+    public function callRequest(Request $request)
+    {
+        $request->validate([
+            'phone' => 'required',
+        ]);
+
+        $data = $request->all();
+
+        var_dump($data);exit;
+        Mail::send('emails.call', $data, function($message) use ($data) {
+            $message->to('order@2cubes.ru')
+                ->subject('Заказ обратного звонка');
+        });
+
+        return redirect('/')->with('success', 'Спасибо! Мы ответим в ближайшее время!');
+    }
 }

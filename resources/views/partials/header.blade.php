@@ -1,38 +1,42 @@
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/">ПРОМ электроника</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Каталог</a></li>
-                {{--<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">All Products</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                    </ul>
-                </li>--}}
-            </ul>
-           {{-- <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </form>--}}
+<header class="main-header">
+    <div class="container mobile-header">
+        <div class="logo-wrapper">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo">
+            <i class="bi bi-list menu-toggle" ></i>
         </div>
     </div>
-</nav>
-<!-- Header-->
-<header class="bg-dark py-2">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Название магазина</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Какой-то слоган компании</p>
+    <div class="container header-wrapper d-flex justify-content-between align-items-center">
+
+        <div class="logo-wrapper">
+            <a href="{{ route('index') }}"><img src="{{ asset('img/logo.png') }}" alt="Logo"></a>
         </div>
+        <div class="right">
+            <i class="bi bi-x menu-toggle" ></i>
+            <form action="{{ route('catalog') }}" method="GET" class="input-group search-group flex-grow-1">
+                <img class="search-icon" src="{{ asset('img/search.svg') }}" alt="">
+                <input name="search" type="text" class="form-control d-inline-block w-auto" placeholder="Поиск по сайту" />
+                <button class="btn prom-btn p-4">Найти</button>
+            </form>
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="tel:+88888888888" class="ms-3 main-phone"><img src="{{ asset('img/phone.svg') }}" class="ms-4" alt="" /> 8 888 888 88 88</a>
+                <a href="#" class="header-btn ms-4 p-4 btn prom-btn-outline"  data-bs-toggle="modal" data-bs-target="#requestModal">Отправить запрос</a>
+                <a href="#" class="header-btn ms-4 p-4 btn prom-btn"  data-bs-toggle="modal" data-bs-target="#callModal">Заказать звонок</a>
+            </div>
+        </div>
+
+        <!-- Main Navbar -->
+        <nav class="main-navbar">
+            <ul class="p-0 main-navbar-wrapper">
+                <x-navbar-item route="store">Склад</x-navbar-item>
+                <x-navbar-item route="manufacturers">Производители</x-navbar-item>
+                <x-navbar-item route="catalog">Каталог</x-navbar-item>
+                <x-navbar-item route="delivery">Доставка</x-navbar-item>
+                <x-navbar-item route="guaranties">Гарантии</x-navbar-item>
+                <x-navbar-item route="suppliers">Поставщикам</x-navbar-item>
+                <x-navbar-item route="about-us">О компании</x-navbar-item>
+                <x-navbar-item route="contacts">Контакты</x-navbar-item>
+            </ul>
+        </nav>
+
     </div>
 </header>

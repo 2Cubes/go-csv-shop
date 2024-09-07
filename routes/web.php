@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
-Route::get('/category/{id}', [\App\Http\Controllers\IndexController::class, 'category'])->name('category');
-Route::get('/product/{id}', [\App\Http\Controllers\IndexController::class, 'product'])->name('product');
+Route::get('/catalog', [\App\Http\Controllers\CatalogController::class, 'index'])->name('catalog');
+Route::get('/category/{id}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('category');
+Route::get('/brand/{id}', [\App\Http\Controllers\CatalogController::class, 'brand'])->name('brand');
+Route::get('/product/{id}', [\App\Http\Controllers\CatalogController::class, 'product'])->name('product');
 Route::post('/send-request', [\App\Http\Controllers\RequestController::class, 'sendRequest'])->name('send.request');
+Route::post('/send-call', [\App\Http\Controllers\RequestController::class, 'callRequest'])->name('send.call');
+Route::get('/store', [\App\Http\Controllers\SiteController::class, 'index'])->name('store');
+Route::get('/manufacturers', [\App\Http\Controllers\ManufacturersController::class, 'index'])->name('manufacturers');
+Route::get('/delivery', [\App\Http\Controllers\SiteController::class, 'delivery'])->name('delivery');
+Route::get('/guaranties', [\App\Http\Controllers\SiteController::class, 'guaranties'])->name('guaranties');
+Route::get('/suppliers', [\App\Http\Controllers\SiteController::class, 'suppliers'])->name('suppliers');
+Route::get('/about-us', [\App\Http\Controllers\SiteController::class, 'aboutUs'])->name('about-us');
+Route::get('/contacts', [\App\Http\Controllers\SiteController::class, 'contacts'])->name('contacts');

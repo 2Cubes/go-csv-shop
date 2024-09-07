@@ -1,34 +1,22 @@
 @extends('layouts.app')
 
-@php
-if(isset($category) && $category) {
-    $title = $category->name;
-}elseif(isset($brand) && $brand) {
-    $title = $brand->name;
-}
-
-@endphp
-
-@section('title', $title . " - покупайте в компании Промэлектроника")
-@section('description', "Для заказа «название категории» пришлите запрос на электронную почту sales@prom-elec.com. Быстрая доставка по России и странам СНГ.")
-
+@section('title', 'Home Page')
 
 @section('content')
 
     <section class="breadcrumbs">
         <div class="container">
             <ul>
-                <li><a href="/">Главная</a></li>
-                <li><a href="/catalog">Каталог</a></li>
-                <li>{{ $title }}</li>
+                <li><a href="#">Главная</a></li>
+                <li>Каталог</li>
             </ul>
         </div>
     </section>
 
     <section class="catalog">
-        <div class="container title"><span class="prom-title">{{ $title }}</span></div>
         <div class="container">
             <div class="sidebar">
+                <span class="prom-title">Каталог</span>
                 @include("filter")
                 <span class="total">{{ $count }} товаров найдено</span>
             </div>
@@ -40,8 +28,8 @@ if(isset($category) && $category) {
                 </div>
                 {{ $products->links('pagination::catalog') }}
 
-                <p>Все поставки Siemens осуществляются без посредников и имеют официальную гарантию завода-изготовителя. На отдельные группы товаров гарантия увеличена до 18 месяцев. На Siemens и весь ассортимент Siemens прилагается сертификат в соответствии с законодательством. Прямые поставки Siemens позволяют нам предлагать высококачественное оборудование Siemens в Москве по выгодной невысокой цене по всей России и странам СНГ.</p>
-                <span class="prom-title">Siemens - преимущества поставки от компании 6088</span>
+                <p>Все поставки осуществляются без посредников и имеют официальную гарантию завода-изготовителя. На отдельные группы товаров гарантия увеличена до 18 месяцев. На Siemens и весь ассортимент Siemens прилагается сертификат в соответствии с законодательством. Прямые поставки Siemens позволяют нам предлагать высококачественное оборудование Siemens в Москве по выгодной невысокой цене по всей России и странам СНГ.</p>
+                <span class="prom-title">преимущества поставки от компании 6088</span>
                 <ul>
                     <li>удобный сервис экспресс-доставки</li>
                     <li>возможность организации адресной доставки до двери</li>
