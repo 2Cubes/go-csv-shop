@@ -66,25 +66,4 @@
         </div>
     </section>
 
-    <!-- Contacts Section -->
-    <section class="contacts">
-        <div class="container">
-            <span class="prom-title">Контакты</span>
-            <div class="contacts-wrapper">
-                <div class="contact-item">
-                    <img class="me-2" src="/img/location.svg" alt="">
-                    <span>Адрес</span>
-                </div>
-                <div class="contact-item">
-                    <img class="me-2" src="/img/phone.svg" alt="">
-                    <span>8-800-350-57-63</span>
-                </div>
-                <div class="contact-item">
-                    <img class="me-2" src="/img/mail.svg" alt="">
-                    <span>info@mail.com</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
 @endsection

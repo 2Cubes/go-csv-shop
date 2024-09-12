@@ -27,7 +27,7 @@
         <!-- Main Navbar -->
         <nav class="main-navbar">
             <ul class="p-0 main-navbar-wrapper">
-                <x-navbar-item route="store">Склад</x-navbar-item>
+                <x-navbar-item route="index">Склад</x-navbar-item>
                 <x-navbar-item route="manufacturers">Производители</x-navbar-item>
                 <x-navbar-item route="catalog">Каталог</x-navbar-item>
                 <x-navbar-item route="delivery">Доставка</x-navbar-item>

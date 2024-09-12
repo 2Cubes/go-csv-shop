@@ -67,11 +67,10 @@
           <span class="prom-title">
             О компании
           </span>
-                <p>Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.</p>
-                <p>Рыбатекст используется дизайнерами, проектировщиками и фронтендерами, когда нужно быстро заполнить макеты или прототипы содержимым. Это тестовый контент, который не должен нести никакого смысла, лишь показать наличие самого текста или продемонстрировать типографику в деле.</p>
+                <p>Добро пожаловать на сайт компании Промэлектроника — вашего надежного партнера в сфере поставок промышленных электронных компонентов. Мы предлагаем широкий ассортимент продукции для решения любых задач в области электроники и автоматизации.</p>
             </div>
             <div class="right">
-                <img src="img/about.png" alt="" />
+                <img src="/img/about.png" alt="" />
             </div>
         </div>
     </section>
@@ -93,28 +92,6 @@
                         <div><img src="/img/example-logo.png" alt="Слайд 6" class="img-fluid"></div>
                         <div><img src="/img/example-logo.png" alt="Слайд 7" class="img-fluid"></div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contacts Section -->
-    <section class="contacts">
-        <div class="container">
-            <span class="prom-title">Контакты</span>
-            <div class="contacts-wrapper">
-                <div class="contact-item">
-                    <img class="me-2" src="/img/location.svg" alt="">
-                    <span>Адрес</span>
-                </div>
-                <div class="contact-item">
-                    <img class="me-2" src="/img/phone.svg" alt="">
-                    <span>8-800-350-57-63</span>
-                </div>
-                <div class="contact-item">
-                    <img class="me-2" src="/img/mail.svg" alt="">
-                    <span>info@mail.com</span>
                 </div>
             </div>
         </div>
