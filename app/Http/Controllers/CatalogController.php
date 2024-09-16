@@ -39,13 +39,13 @@ class CatalogController extends Controller
         ]);
     }
 
-    public function category(Request $request, $id)
+    public function category(Request $request, $slug)
     {
-        $category = Category::find($id);
-        $products = Product::where("category_id", $id)->paginate(60);
-        $totalProductsCount = Product::where('category_id', $id)->count();
-        $brands = Cache::remember('brands_in_category_'.$id, 60 * 60, function () use ($id) {
-            return Brand::whereIn('id', Product::where('category_id', $id)->pluck('brand_id'))->get();
+        $category = Category::where(["slug" => $slug])->first();
+        $products = Product::where("category_id", $category->id)->paginate(60);
+        $totalProductsCount = Product::where('category_id', $category->id)->count();
+        $brands = Cache::remember('brands_in_category_'.$category->id, 60 * 60, function () use ($category) {
+            return Brand::whereIn('id', Product::where('category_id', $category->id)->pluck('brand_id'))->get();
         });
 
         return view('category', [
@@ -56,16 +56,16 @@ class CatalogController extends Controller
         ]);
     }
 
-    public function brand(Request $request, $id)
+    public function brand(Request $request, $slug)
     {
-        $brand = Brand::find($id);
-        $products = Product::where("brand_id", $id)->paginate(60);
-        $totalProductsCount = Product::where('brand_id', $id)->count();
-        $categories = Cache::remember('categories_in_brand_'.$id, 60 * 60, function () use ($id) {
+        $brand = Brand::where(["slug" => $slug])->first();
+        $products = Product::where("brand_id", $brand->id)->paginate(60);
+        $totalProductsCount = Product::where('brand_id', $brand->id)->count();
+        $categories = Cache::remember('categories_in_brand_'.$brand->id, 60 * 60, function () use ($brand) {
             return Category::select('categories.*')
                 ->join('products', 'products.category_id', '=', 'categories.id')
-                ->where('products.brand_id', $id)
-                ->distinct() // Убирает дубликаты категорий
+                ->where('products.brand_id', $brand->id)
+                ->distinct()
                 ->get();
         });
 
@@ -78,7 +78,7 @@ class CatalogController extends Controller
         ]);
     }
 
-    public function product(Request $request, $id)
+    public function product(Request $request, $sku, $id)
     {
         $product = Product::with('category')->where("id", $id)->first();
         $products = Product::where("category_id", $product->category_id)->limit(4)->get();

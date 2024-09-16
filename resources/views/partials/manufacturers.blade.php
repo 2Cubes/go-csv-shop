@@ -5,7 +5,7 @@
         <div class="manufacture-wrapper">
             @foreach($brands as $index => $brand)
                 <div class="item bg">
-                    <a href="{{ route('brand', $brand->id) }}" class="name">{{ $brand->name }}</a>
+                    <a href="{{ route('brand', $brand->slug) }}" class="name">{{ $brand->name }}</a>
                     <span class="number">{{ $brand->products_count }}</span>
                 </div>
             @endforeach

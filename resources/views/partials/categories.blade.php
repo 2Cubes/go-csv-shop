@@ -4,7 +4,7 @@
         <div class="manufacture-wrapper three-columns">
             @foreach($categories as $index => $category)
                 <div class="item bg">
-                    <a href="{{ route('category', $category->id) }}" class="name">{{ $category->name }}</a>
+                    <a href="{{ route('category', $category->slug) }}" class="name">{{ $category->name }}</a>
                     <span class="number">{{ $category->products_count }}</span>
                 </div>
             @endforeach

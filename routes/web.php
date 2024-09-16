@@ -15,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 Route::get('/catalog', [\App\Http\Controllers\CatalogController::class, 'index'])->name('catalog');
-Route::get('/category/{id}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('category');
-Route::get('/brand/{id}', [\App\Http\Controllers\CatalogController::class, 'brand'])->name('brand');
-Route::get('/product/{id}', [\App\Http\Controllers\CatalogController::class, 'product'])->name('product');
+Route::get('/category/{slug}', [\App\Http\Controllers\CatalogController::class, 'category'])->name('category');
+Route::get('/brand/{slug}', [\App\Http\Controllers\CatalogController::class, 'brand'])->name('brand');
+Route::get('/product/{sku}-{id}', [\App\Http\Controllers\CatalogController::class, 'product'])->where([
+    'sku' => '[A-Za-z0-9\-_]+',
+    'id' => '[0-9]+',
+])->name('product');
 Route::post('/send-request', [\App\Http\Controllers\RequestController::class, 'sendRequest'])->name('send.request');
 Route::post('/send-call', [\App\Http\Controllers\RequestController::class, 'callRequest'])->name('send.call');
 Route::get('/store', [\App\Http\Controllers\SiteController::class, 'index'])->name('store');
