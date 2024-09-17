@@ -34,7 +34,6 @@ class RequestController extends Controller
 
         $data = $request->all();
 
-        var_dump($data);exit;
         Mail::send('emails.call', $data, function($message) use ($data) {
             $message->to('order@2cubes.ru')
                 ->subject('Заказ обратного звонка');
