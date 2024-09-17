@@ -19,7 +19,7 @@ class RequestController extends Controller
         $data = $request->all();
 
         Mail::send('emails.request', $data, function($message) use ($data) {
-            $message->to('order@2cubes.ru')
+            $message->to('sales@prom-elec.com')
                 ->subject('Новая заявка от ' . $data['name']);
         });
 
@@ -35,7 +35,7 @@ class RequestController extends Controller
         $data = $request->all();
 
         Mail::send('emails.call', $data, function($message) use ($data) {
-            $message->to('order@2cubes.ru')
+            $message->to('sales@prom-elec.com')
                 ->subject('Заказ обратного звонка');
         });
 
