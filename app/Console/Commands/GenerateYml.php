@@ -36,6 +36,7 @@ class GenerateYml extends Command
         $ymlFolder = 'public/yml/';
         Storage::disk('local')->deleteDirectory($ymlFolder);
         Storage::disk('local')->makeDirectory($ymlFolder);
+        chmod(Storage::disk('local')->path($ymlFolder), 0755);
 
         $this->generateYmlFiles($ymlFolder);
 
@@ -80,7 +81,7 @@ class GenerateYml extends Command
                 $batchXml .= '<stock>' . $product->stock . '</stock>';
                 $batchXml .= '<name>' . htmlspecialchars($product->name) . '</name>';
                 $batchXml .= '<description>' . htmlspecialchars($product->description) . '</description>';
-                $batchXml .= '</offer>';
+                $batchXml .= '</offer>' . "\n";
 
                 $productCount++;
             }
