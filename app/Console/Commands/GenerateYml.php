@@ -24,7 +24,7 @@ class GenerateYml extends Command
      */
     protected $description = 'Generate YML files with categories and products split into multiple files if necessary';
 
-    private $maxProductsPerFile = 100000;
+    private $maxProductsPerFile = 50000;
 
     /**
      * Execute the console command.
