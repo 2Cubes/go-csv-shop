@@ -14,6 +14,7 @@ class RequestController extends Controller
             'phone' => 'required',
             'email' => 'nullable|email',
             'comment' => 'nullable|string',
+            'sku' => 'nullable|string',
         ]);
 
         $data = $request->all();

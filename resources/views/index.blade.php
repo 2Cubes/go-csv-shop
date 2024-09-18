@@ -32,34 +32,9 @@
         </div>
     </section>
 
-    <!-- Manufacturers Section -->
     @include("partials.manufacturers")
 
-    <!-- Contact Form Section -->
-    <section class="contact-form text-white text-center p-5">
-        <div class="container">
-            <h2 class="prom-title">Отправьте заявку и узнайте стоимость прямо сейчас</h2>
-            <p class="description">Ответим на ваш запрос в течение 15 минут</p>
-            <form class="row g-3 form-row">
-                <div class="col-md-6 col-12">
-                    <input type="text" class="form-control" placeholder="Ваш телефон">
-                </div>
-                <div class="col-md-6 col-12">
-                    <input type="text" class="form-control" placeholder="Артикул или описание">
-                </div>
-                <div class="col-md-6 col-12">
-                    <input type="email" class="form-control" placeholder="Почта">
-                </div>
-                <div class="col-md-6 col-12">
-                    <button type="submit" class="btn prom-btn">Отправить запрос</button>
-                </div>
-                <div class="col-12 checkbox-wrapper">
-                    <input type="checkbox" class="form-check-input me-2" id="consentCheck">
-                    <label class="form-check-label" for="consentCheck">Согласие с условиями <a href="#">политики конфиденциальности</a> и <a href="#">пользовательского соглашения</a></label>
-                </div>
-            </form>
-        </div>
-    </section>
+    @include("partials.order")
 
     @include("partials.categories")
 
@@ -86,13 +61,13 @@
             <div class="row">
                 <div class="col-12 px-5">
                     <div class="slick-carousel d-none">
-                        <div><img src="/img/example-logo.png" alt="Слайд 1" class="img-fluid"></div>
-                        <div><img src="/img/example-logo.png" alt="Слайд 2" class="img-fluid"></div>
-                        <div><img src="/img/example-logo.png" alt="Слайд 3" class="img-fluid"></div>
-                        <div><img src="/img/example-logo.png" alt="Слайд 4" class="img-fluid"></div>
-                        <div><img src="/img/example-logo.png" alt="Слайд 5" class="img-fluid"></div>
-                        <div><img src="/img/example-logo.png" alt="Слайд 6" class="img-fluid"></div>
-                        <div><img src="/img/example-logo.png" alt="Слайд 7" class="img-fluid"></div>
+                        <div><img src="/img/logos/gasprom.jpg" alt="Газпром" class="img-fluid"></div>
+                        <div><img src="/img/logos/lukoil.jpg" alt="Лукойл" class="img-fluid"></div>
+                        <div><img src="/img/logos/mac.jpg" alt="МАК" class="img-fluid"></div>
+                        <div><img src="/img/logos/surgutneftegas.jpg" alt="СургутНефтеГаз" class="img-fluid"></div>
+                        <div><img src="/img/logos/tatneft.jpg" alt="ТатНефть" class="img-fluid"></div>
+                        <div><img src="/img/logos/tehnonikol.jpg" alt="ТехноНиколь" class="img-fluid"></div>
+                        <div><img src="/img/logos/uralmashzavod.jpg" alt="УралМашЗавод" class="img-fluid"></div>
                     </div>
                 </div>
             </div>

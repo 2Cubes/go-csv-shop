@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', 'Контакты компании')
+@section('description', 'Для связи с компанией Промэлектроника присылайте запросы на нашу электронную почту. Ответ на запросы в течении 1 часа. Работаем 7 дней в неделю')
 
 @section('content')
 

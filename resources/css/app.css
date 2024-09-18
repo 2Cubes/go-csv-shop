@@ -429,6 +429,10 @@ header .search-group .btn {
 }
 .slick-slider .slick-slide {
     margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
 }
 .slick-slider .slick-carousel.d-none {
     visibility: hidden;

@@ -7,13 +7,13 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
 
 class IndexController extends Controller
 {
 
     public function index(Request $request)
     {
-
         $brandsQuery = Brand::whereHas('products')->withCount('products');
 
         $brands = Cache::remember('brands_index', 60 * 60, function () use ($brandsQuery) {

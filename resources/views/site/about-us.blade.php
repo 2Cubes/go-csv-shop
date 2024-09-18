@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Home Page')
+@section('title', 'Информация о компании')
+@section('description', 'Промэлектроника ваш надежный поставщик оборудования и электронных компонентов')
 
 @section('content')
 
@@ -20,30 +21,6 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="contact-form text-white text-center p-5">
-        <div class="container">
-            <h2 class="prom-title">Отправьте заявку и узнайте стоимость прямо сейчас</h2>
-            <p class="description">Ответим на ваш запрос в течение 15 минут</p>
-            <form class="row g-3 form-row">
-                <div class="col-md-6 col-12">
-                    <input type="text" class="form-control" placeholder="Ваш телефон">
-                </div>
-                <div class="col-md-6 col-12">
-                    <input type="text" class="form-control" placeholder="Артикул или описание">
-                </div>
-                <div class="col-md-6 col-12">
-                    <input type="email" class="form-control" placeholder="Почта">
-                </div>
-                <div class="col-md-6 col-12">
-                    <button type="submit" class="btn prom-btn">Отправить запрос</button>
-                </div>
-                <div class="col-12 checkbox-wrapper">
-                    <input type="checkbox" class="form-check-input me-2" id="consentCheck">
-                    <label class="form-check-label" for="consentCheck">Согласие с условиями <a href="#">политики конфиденциальности</a> и <a href="#">пользовательского соглашения</a></label>
-                </div>
-            </form>
-        </div>
-    </section>
+    @include("partials.order")
 
 @endsection

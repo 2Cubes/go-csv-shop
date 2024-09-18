@@ -9,7 +9,14 @@
 <h1>Новая заявка</h1>
 <p><strong>Имя:</strong> {{ $name }}</p>
 <p><strong>Телефон:</strong> {{ $phone }}</p>
-<p><strong>Email:</strong> {{ $email }}</p>
-<p><strong>Комментарий:</strong> {{ $comment }}</p>
+@if($sku)
+    <p><strong>Артикул:</strong> {{ $sku }}</p>
+@endif
+@if($email)
+    <p><strong>Email:</strong> {{ $email }}</p>
+@endif
+@if($comment)
+    <p><strong>Комментарий:</strong> {{ $comment }}</p>
+@endif
 </body>
 </html>
