@@ -10,7 +10,7 @@ if(isset($category) && $category) {
 @endphp
 
 @section('title', $title . " покупайте в компании Промэлектроника")
-@section('description', "Для заказа «название категории» пришлите запрос на электронную почту sales@prom-elec.com. Быстрая доставка по России и странам СНГ.")
+@section('description', "Для заказа «".$title."» пришлите запрос на электронную почту sales@prom-elec.com. Быстрая доставка по России и странам СНГ.")
 
 
 @section('content')
