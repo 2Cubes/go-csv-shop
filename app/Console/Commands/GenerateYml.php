@@ -50,7 +50,7 @@ class GenerateYml extends Command
 
         $productCount = 0;
 
-        Product::with(['category', 'brand'])->chunk(1000, function ($products) use (&$fileIndex, &$productCount, $ymlFolder, &$filePath) {
+        Product::with(['category', 'brand'])->chunk(50000, function ($products) use (&$fileIndex, &$productCount, $ymlFolder, &$filePath) {
             $batchXml = '';
 
             foreach ($products as $product) {
