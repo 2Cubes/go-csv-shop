@@ -15,7 +15,6 @@ class GenerateSitemap extends Command
     protected $description = 'Generate sitemap for products, categories, brands, and static pages, and split into smaller sitemaps if necessary';
     protected $sitemapFolder = 'public/sitemaps/';
 
-    // Количество URL в одном sitemap
     private $maxUrlsPerSitemap = 100000;
 
     public function handle()
@@ -25,6 +24,7 @@ class GenerateSitemap extends Command
         // Папка для хранения карт сайта
         Storage::disk('local')->deleteDirectory($this->sitemapFolder);
         Storage::disk('local')->makeDirectory($this->sitemapFolder);
+        chmod(Storage::disk('local')->path($this->sitemapFolder), 0755);
 
         $this->generateSitemaps();
 
@@ -155,7 +155,7 @@ class GenerateSitemap extends Command
         $xml = '<url>';
         $xml .= '<loc>' . htmlspecialchars($url) . '</loc>';
         $xml .= '<lastmod>' . now()->toAtomString() . '</lastmod>';
-        $xml .= '</url>';
+        $xml .= '</url>' . "\n";
         File::append(Storage::disk('local')->path($fileName), $xml);
     }
 
