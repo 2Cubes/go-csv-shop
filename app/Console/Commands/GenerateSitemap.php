@@ -118,7 +118,7 @@ class GenerateSitemap extends Command
     private function generateMainSitemap()
     {
         $sitemapFolder = 'public/sitemaps/';
-        $mainSitemapFile = $sitemapFolder . 'sitemap.xml';
+        $mainSitemapFile = public_path('sitemap.xml');
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';
         $xml .= '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
@@ -135,7 +135,7 @@ class GenerateSitemap extends Command
 
         $xml .= '</sitemapindex>';
 
-        File::append(Storage::disk('local')->path($mainSitemapFile), $xml);
+        File::put($mainSitemapFile, $xml);
     }
 
     private function getSitemapFileName($index)
