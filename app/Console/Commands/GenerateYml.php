@@ -54,6 +54,9 @@ class GenerateYml extends Command
             $batchXml = '';
 
             foreach ($products as $product) {
+                $product->sku = trim(preg_replace('/[^A-Za-z0-9\-_]/', '', $product->sku));
+                if(!$product->sku) continue;
+
                 if ($productCount >= $this->maxProductsPerFile) {
                     $this->endXml($filePath);
                     $fileIndex++;
@@ -63,7 +66,7 @@ class GenerateYml extends Command
                 }
 
                 $batchXml .= '<offer id="' . $product->id . '" available="' . ($product->stock > 0 ? 'true' : 'false') . '">';
-                $batchXml .= '<url>' . route('product', ["sku" => preg_replace('/[^A-Za-z0-9\-_]/', '', $product->sku), "id" => $product->id]) . '</url>';
+                $batchXml .= '<url>' . route('product', ["sku" => $product->sku, "id" => $product->id]) . '</url>';
                 $batchXml .= '<price>' . $product->price . '</price>';
                 $batchXml .= '<currencyId>RUB</currencyId>';
 
