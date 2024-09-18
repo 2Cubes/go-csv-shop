@@ -81,6 +81,9 @@ class GenerateSitemap extends Command
 
         Product::chunk(10000, function ($products) use (&$sitemapIndex, &$urlCount, &$fileName) {
             foreach ($products as $product) {
+                $product->sku = trim(preg_replace('/[^A-Za-z0-9\-_]/', '', $product->sku));
+                if(!$product->sku) continue;
+
                 if ($urlCount >= $this->maxUrlsPerSitemap) {
                     $this->endSitemapFile($fileName);
                     $sitemapIndex++;
@@ -89,7 +92,7 @@ class GenerateSitemap extends Command
                     $this->startSitemapFile($fileName);
                 }
 
-                $this->appendUrlToSitemap($fileName, route('product', ["sku" => preg_replace('/[^A-Za-z0-9\-_]/', '', $product->sku), "id" => $product->id]));
+                $this->appendUrlToSitemap($fileName, route('product', ["sku" => $product->sku, "id" => $product->id]));
                 $urlCount++;
             }
         });
