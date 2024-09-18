@@ -115,8 +115,9 @@ class GenerateSitemap extends Command
         ];
     }
 
-    private function generateMainSitemap($sitemapFolder)
+    private function generateMainSitemap()
     {
+        $sitemapFolder = 'public/sitemaps/';
         $mainSitemapFile = $sitemapFolder . 'sitemap.xml';
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';
         $xml .= '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
