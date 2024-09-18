@@ -125,7 +125,7 @@ class GenerateSitemap extends Command
         $sitemapFiles = Storage::disk('local')->files($sitemapFolder);
         foreach ($sitemapFiles as $sitemapFile) {
             if (strpos($sitemapFile, 'sitemap-') !== false) {
-                $url = asset(str_replace('public/', '', $sitemapFile));
+                $url = asset(str_replace('public/', 'storage/', $sitemapFile));
                 $xml .= '<sitemap>';
                 $xml .= '<loc>' . htmlspecialchars($url) . '</loc>';
                 $xml .= '<lastmod>' . now()->toAtomString() . '</lastmod>';
