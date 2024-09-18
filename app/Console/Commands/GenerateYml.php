@@ -78,7 +78,7 @@ class GenerateYml extends Command
                     $batchXml .= '<vendor>' . htmlspecialchars($product->brand->name) . '</vendor>';
                 }
 
-                $batchXml .= '<stock>10</stock>';
+                $batchXml .= '<stock>' . $product->stock . '</stock>';
                 $batchXml .= '<name>' . htmlspecialchars($product->name) . '</name>';
                 $batchXml .= '<description>' . htmlspecialchars($product->description) . '</description>';
                 $batchXml .= '</offer>' . "\n";
