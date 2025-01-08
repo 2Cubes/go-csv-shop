@@ -30,6 +30,3 @@ Route::get('/guaranties', [\App\Http\Controllers\SiteController::class, 'guarant
 Route::get('/suppliers', [\App\Http\Controllers\SiteController::class, 'suppliers'])->name('suppliers');
 Route::get('/about-us', [\App\Http\Controllers\SiteController::class, 'aboutUs'])->name('about-us');
 Route::get('/contacts', [\App\Http\Controllers\SiteController::class, 'contacts'])->name('contacts');
-
-
-

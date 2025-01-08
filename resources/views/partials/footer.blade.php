@@ -40,8 +40,7 @@
         <p>Оставьте заявку и наши менеджеры свяжутся с вами в течении 15 минут</p>
         <form id="callFooterForm" action="{{ route('send.call') }}" method="POST" class="input-group mt-4">
             @csrf
-            <input type="text" name="phone" class="phone" placeholder="Ваш телефон" required/>
-
+            <input type="text" class="phone" placeholder="Ваш телефон" required/>
             <button type="submit" class="btn prom-btn">Отправить</button>
         </form>
         <div class="bottom-line">

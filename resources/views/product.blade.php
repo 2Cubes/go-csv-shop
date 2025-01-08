@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $product->name . " – Оригинальное оборудование | Промэлектроника")
-@section('description', "Купите ".$product->name." с быстрой доставкой по России и СНГ. Прямые поставки, гарантия качества. Свяжитесь с нами: sales@prom-elec.com. Промэлектроника – ваш надежный поставщик промышленного оборудования..")
-
+@section('title', $product->name . " - покупайте в компании Промэлектроника")
+@section('description', "Быстрая доставка «".$product->name ."» по России и странам СНГ. sales@prom-elec.com – электронная почта для заказа оборудования. Работаем напрямую с производителями оборудования.")
 
 @section('content')
 
@@ -12,12 +11,10 @@
                 <li><a href="/">Главная</a></li>
                 <li><a href="/catalog">Каталог</a></li>
                 <li>{{ $product->name }}</li>
-<span></span>
-
             </ul>
         </div>
     </section>
-<script src="//code.jivo.ru/widget/vki4j0IcAI" async></script>
+
     <section class="product">
         <div class="container">
             <div class="product-card">
@@ -26,7 +23,6 @@
                 </div>
                 <div class="prod-info">
                     <span class="name">{{ $product->name }}</span>
-<span></span>
                     <div class="art">
                         <span class="label">Артикул</span>
                         <span class="val">{{ $product->sku }}</span>
@@ -35,15 +31,19 @@
                         <span class="label">Производитель</span>
                         <span class="val">{{ $product->brand->name }}</span>
                     </div>
-                   <div class="price">
-    <span class="label">Цена</span>
-    <span class="val">по запросу</span>
-</div>
-
+                    <div class="price">
+                        <span class="label">Цена</span>
+                        <span class="val">@if($product->price * 1)
+                                {{ number_format($product->price, 2, '.', ' ') }}  ₽
+                            @else
+                                Уточняйте цену
+                            @endif
+                        </span>
+                    </div>
                     <div class="btn-controls">
-    <a href="https://forms.yandex.ru/u/67374a5749363926b5f71541/" class="btn prom-btn" target="_blank">Заказать</a>
-    <a href="https://forms.yandex.ru/u/67374a5749363926b5f71541/" class="btn prom-btn-outline" target="_blank">Консультанция</a>
-</div>
+                        <button class="btn prom-btn" data-bs-toggle="modal" data-bs-target="#requestModal">Заказать</button>
+                        <button class="btn prom-btn-outline" data-bs-toggle="modal" data-bs-target="#requestModal">Консультанция</button>
+                    </div>
                     <div class="description">
                         <span class="label">Описание</span>
                         <p>{{ $product->description }}</p>

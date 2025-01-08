@@ -15,11 +15,10 @@ class GenerateSitemap extends Command
     protected $description = 'Generate sitemap for products, categories, brands, and static pages, and split into smaller sitemaps if necessary';
     protected $sitemapFolder = 'public/sitemaps/';
 
-    private $maxUrlsPerSitemap = 50000;
+    private $maxUrlsPerSitemap = 30000;
 
     public function handle()
     {
-
         $this->info('Generating sitemap...');
 
         // Папка для хранения карт сайта

@@ -1,36 +1,7 @@
 @extends('layouts.app')
 
-@php
-    $currentLetter = strtoupper(request()->input('letter', 'A')); // Устанавливаем букву по умолчанию
-@endphp
-
-@section('title', "Производители оборудования на '$currentLetter' в компании Промэлектроника купить по низкой цене. Официальный дилер.")
-
-@php
-    // Получаем текущую букву из параметра letter или задаем по умолчанию "A"
-    $currentLetter = strtoupper(request()->input('letter', 'A'));
-    // Отбираем производителей, чьи имена начинаются с выбранной буквы
-    $filteredBrands = $brands->filter(function ($brand) use ($currentLetter) {
-        return strtoupper(substr($brand->name, 0, 1)) === $currentLetter;
-    })->pluck('name')->toArray();
-    // Преобразуем список производителей в строку
-    $brandsList = implode(', ', $filteredBrands);
-@endphp
-
-@php
-    // Получаем текущую букву из параметра letter или задаем по умолчанию "A"
-    $currentLetter = strtoupper(request()->input('letter', 'A'));
-    // Отбираем производителей, чьи имена начинаются с выбранной буквы
-    $filteredBrands = $brands->filter(function ($brand) use ($currentLetter) {
-        return strtoupper(substr($brand->name, 0, 1)) === $currentLetter;
-    })->pluck('name')->toArray();
-    // Преобразуем список производителей в строку
-    $brandsList = implode(', ', $filteredBrands);
-@endphp
-
-@section('description', "Производители оборудования на букву '$currentLetter': $brandsList. Поставляем продукцию от ведущих мировых производителей. Быстрая доставка по России и СНГ.")
-
-
+@section('title', "Компания Промэлектроника поставляет оборудование более 500 производителей со всего мира, Европы, США и Китая.")
+@section('description', "Поставляем электронные компоненты, приборы  от таких производителей как Siemens, Omron, Honeywell, Danfoss, Rittal и многих других. Быстрая доставка по всей России и СНГ. Низкие цены на поставляемое оборудование.")
 
 @php
     $initialCount = 32;

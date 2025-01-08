@@ -13,7 +13,6 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('sitemap:generate')->hourly();
     }
 
     /**
@@ -25,9 +24,4 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
-//
-//protected function schedule(Schedule $schedule)
-//{
-//    $schedule->command('sitemap:generate')->hourly();
-//}
 }
