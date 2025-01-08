@@ -56,7 +56,7 @@
     <section class="slick-slider">
         <div class="container my-5">
       <span class="prom-title">
-        Более 2300 компаний заказывают оборудование у нас
+        Более 2500 компаний заказывают оборудование у нас
       </span>
             <div class="row">
                 <div class="col-12 px-5">
